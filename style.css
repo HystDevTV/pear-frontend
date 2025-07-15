@@ -1,0 +1,340 @@
+/* Grundlegende Farben und Variablen */
+:root {
+    --primary-color: #4CAF50; /* Grün */
+    --secondary-color: #2196F3; /* Blau */
+    --text-color: #333;
+    --background-light: #f4f4f4;
+    --background-dark: #333;
+    --white: #fff;
+    --border-color: #ddd; /* Für Formularfelder */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Für Box-Schatten */
+}
+
+/* --- Allgemeine HTML- und Body-Stile (für Sticky Footer) --- */
+html, body {
+    height: 100%; /* Stellt sicher, dass HTML und Body 100% der Viewport-Höhe einnehmen */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Poppins als Hauptschrift, Arial als Fallback */
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--white);
+    display: flex; /* Macht den Body zu einem Flex-Container */
+    flex-direction: column; /* Ordnet Header, Main, Footer untereinander an */
+    min-height: 100vh; /* Mindesthöhe des Bodys auf 100% des Viewports setzen */
+}
+
+/* --- Container für Inhaltsbreite --- */
+.container {
+    width: 80%;
+    max-width: 1200px; /* Optional: Maximale Breite für sehr große Bildschirme */
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    color: var(--white);
+    background: var(--primary-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #45a049; /* Dunkleres Grün beim Hover */
+}
+
+.btn.primary {
+    background: var(--white);
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn.primary:hover {
+    background: var(--background-light);
+}
+
+/* --- Header --- */
+header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem 0; /* Etwas mehr Polsterung oben/unten */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 180px; /* Mindesthöhe des Headers */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 4rem; /* PEAR größer */
+    font-family: 'Montserrat', sans-serif; /* Montserrat für den Haupttitel */
+    letter-spacing: 2px; /* Etwas mehr Abstand zwischen den Buchstaben */
+    text-transform: uppercase;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    margin: 10px auto 0 auto; /* Oben 10px, links/rechts auto für Zentrierung */
+    font-size: 1.7rem; /* Subtitel größer */
+    font-family: 'Poppins', sans-serif; /* Poppins für den Subtitel */
+    font-weight: 400;
+    max-width: 90%; /* Breite anpassen für Lesbarkeit */
+    line-height: 1.4;
+    text-align: center; /* Explizit zentrieren */
+}
+
+/* --- Hauptinhaltsbereich (Main) --- */
+main {
+    flex-grow: 1; /* Lässt den Hauptinhaltsbereich den verbleibenden Platz einnehmen */
+}
+
+section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+section:nth-of-type(odd) {
+    background: var(--background-light);
+}
+
+section h2 { /* Für Login/Registrieren Überschriften */
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+section h3 { /* Für Feature- und Benefits-Überschriften */
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+/* --- Hero Section --- */
+#hero {
+    background: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 0;
+}
+
+#hero h2 { /* Spezifische h2-Größe für Hero */
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#hero p { /* Spezifische p-Größe für Hero */
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* --- Features Grid --- */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.feature-item {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.feature-item h4 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+/* --- Benefits List --- */
+#benefits ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#benefits ul li {
+    background: var(--white);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 1.1rem;
+}
+
+/* --- Kontaktformular --- */
+#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#contact form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#contact form button {
+    padding: 12px 20px;
+}
+
+/* --- Login & Registrierungs-Seiten Stile --- */
+#login-section,
+#register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Höhe: min-height des Viewports minus die festen Höhen von Header und Footer */
+    min-height: calc(100vh - 180px - 60px);
+    background: var(--background-light);
+    padding: 20px;
+}
+
+.login-container,
+.register-container {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    width: 100%;
+    max-width: 400px; /* Breite für die Formular-Container */
+    text-align: center;
+    margin: 0 auto; /* Zentriert den Container horizontal */
+}
+
+.login-container h2,
+.register-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* --- Formular-Gruppen (für Login und Registrierung) --- */
+.form-group {
+    margin-bottom: 0; /* Abstand wird vom Grid/Gap übernommen */
+    text-align: left; /* Stellt sicher, dass Label/Input linksbündig sind */
+
+    /* Flexbox für Label und Input untereinander */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%; /* Stellt sicher, dass das form-group die volle Breite im Grid einnimmt */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+    width: 100%; /* Label soll volle Breite der form-group einnehmen */
+}
+
+/* Input-Felder (allgemein für Formulare) */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%; /* Füllt die verfügbare Breite in der Spalte aus */
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Padding wird in die Breite eingerechnet */
+}
+
+/* --- Grid-Layout für Registrierungsfelder --- */
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei gleich breite Spalten */
+    gap: 20px; /* Abstand zwischen den Spalten und Zeilen */
+    margin-bottom: 20px; /* Abstand zum nächsten Abschnitt/Button */
+    text-align: left; /* Stellt sicher, dass der Text im Grid linksbündig ist */
+}
+
+/* --- Links unterhalb der Formulare --- */
+.login-link,
+.forgot-password {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.login-link a,
+.forgot-password a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.login-link a:hover,
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* --- Buttons in Formularen (spezifische Breite) --- */
+.login-container .btn,
+.register-container .btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--background-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Sorgt dafür, dass der Footer an den unteren Rand gedrückt wird */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    #hero h2 {
+        font-size: 2.2rem;
+    }
+    #hero p {
+        font-size: 1.1rem;
+    }
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    .grid-section { /* Auf kleinen Bildschirmen nur eine Spalte für Formulare */
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
