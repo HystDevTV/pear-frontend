@@ -338,4 +338,288 @@ footer {
         gap: 15px;
     }
 
+/* --- Navigation Bar (main-nav) --- */
+.main-nav {
+    background: var(--background-dark);
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Abstand zwischen den Menüpunkten */
+}
+
+.main-nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    background: rgba(255,255,255,0.2);
+}
+
+/* --- Dashboard Grid --- */
+#dashboard-overview h2 {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: left;
+}
+
+.dashboard-card h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.dashboard-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.dashboard-card ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.dashboard-card ul li:last-child {
+    border-bottom: none;
+}
+
+.dashboard-card p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn.small {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    margin: 5px;
+}
+
+.btn.tiny {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    margin: 2px;
+}
+
+/* --- Filter und Suche (clients, documentation, invoices) --- */
+.filter-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Ermöglicht Umbruch auf kleineren Bildschirmen */
+    justify-content: center; /* Zentriert die Elemente im Filterbereich */
+}
+
+.filter-controls input[type="text"],
+.filter-controls select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    flex-grow: 1; /* Lässt Suchfeld und Select wachsen */
+    max-width: 300px; /* Begrenzt die maximale Breite */
+}
+
+/* --- Datentabellen --- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden; /* Für abgerundete Ecken bei scrollbaren Tabellen */
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+    background: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.data-table tbody tr:hover {
+    background: #f1f1f1;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Client Detail Grid --- */
+.client-data-grid,
+.appointment-data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.data-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.data-card h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.client-actions,
+.appointment-actions,
+.documentation-controls {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.client-data-grid p,
+.appointment-data-grid p {
+    margin-bottom: 8px;
+}
+
+.client-data-grid p strong,
+.appointment-data-grid p strong {
+    min-width: 120px; /* Für bessere Ausrichtung der Doppelpunkte */
+    display: inline-block;
+}
+
+.red {
+    background: #f44336; /* Rot für Warnaktionen */
+    border-color: #f44336;
+}
+
+.red:hover {
+    background: #d32f2f;
+}
+
+/* --- Calendar Controls (appointments.html) --- */
+.calendar-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.calendar-controls span {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#calendar-view ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#calendar-view ul li {
+    background: var(--white);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#calendar-view ul li .btn {
+    margin: 0 5px;
+}
+
+/* --- Responsive Anpassungen für neue Seiten --- */
+@media (max-width: 768px) {
+    .dashboard-grid,
+    .client-data-grid,
+    .appointment-data-grid {
+        grid-template-columns: 1fr; /* Eine Spalte auf kleineren Bildschirmen */
+    }
+
+    .filter-controls input[type="text"],
+    .filter-controls select {
+        max-width: 100%; /* Volle Breite auf kleinen Bildschirmen */
+    }
+
+    .data-table,
+    .data-table tbody,
+    .data-table tr,
+    .data-table th,
+    .data-table td {
+        display: block; /* Macht die Tabelle stapelbar */
+    }
+
+    .data-table thead {
+        display: none; /* Kopfzeile ausblenden */
+    }
+
+    .data-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .data-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .data-table td::before {
+        content: attr(data-label); /* Zeigt die Spaltenüberschrift an */
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
 }
